@@ -2,99 +2,136 @@
 
 **Windows Laptop & iPhone Evidence Analysis | Academic Case Study**
 
-![Status](https://img.shields.io/badge/Project-Academic%20Simulation-blue) ![Focus](https://img.shields.io/badge/Focus-Digital%20Forensics-informational)
+![Project](https://img.shields.io/badge/Project-Academic%20Simulation-blue) ![Focus](https://img.shields.io/badge/Focus-Digital%20Forensics-34495e) ![Tools](https://img.shields.io/badge/Tools-FTK%20Imager%20%7C%20Autopsy%20%7C%20iLEAPP-008080)
 
 ## Overview
 
-This repository documents a **simulated digital forensic investigation** completed during my BSc (Hons) Cybersecurity degree at Coventry University London. The university exercise concerned a fictional counterfeit-currency investigation and involved a staged crime scene and university-supplied USB media containing laptop and iPhone forensic datasets.
+This repository documents a **simulated digital forensic investigation** completed during my BSc (Hons) Cybersecurity degree at Coventry University London. The academic scenario involved suspected counterfeit-currency activity and examination of university-provided laptop and iPhone forensic datasets.
 
-My work covered evidence identification, forensic acquisition, analysis of Windows and iPhone artefacts, correlation of findings, chain-of-custody documentation, and an expert-witness-style report. **This was an academic exercise, not a real criminal case, police appointment, or professional expert-witness engagement.**
+I documented evidence handling, created and verified forensic working images, examined Windows and mobile artefacts, correlated findings and prepared an **expert witness-style report**. The project demonstrates practical investigative methodology and careful interpretation of digital evidence.
 
-## Investigation objectives
+> **Scope:** This was a university exercise, not an actual police investigation or professional expert-witness engagement. Case identities, financial information and investigative documents belong to the simulated scenario.
 
-- Identify and document relevant digital exhibits in the simulated scene.
-- Preserve evidence and create forensic copies of the supplied media.
-- Verify acquired evidence integrity using recorded cryptographic hashes.
-- Examine laptop and iPhone artefacts for relevant activity and connections.
-- Correlate communications, locations, timestamps, and device artefacts.
-- Produce a traceable report with supporting screenshots and evidence records.
+## At a Glance
 
-## Tools and techniques
+| Area | What I did |
+| --- | --- |
+| Evidence handling | Documented evidence identification and chain-of-custody procedures |
+| Acquisition | Used SafeBlock and FTK Imager during forensic imaging workflows |
+| Integrity | Checked forensic image verification results using MD5 hashes |
+| Windows analysis | Examined file-system, recent-device, printer-related and web artefacts in Autopsy |
+| Mobile analysis | Reviewed Telegram messages and application location artefacts using iLEAPP |
+| Correlation | Considered relationships among communications, device activity, transactions and locations |
+| Reporting | Produced a structured expert witness-style academic report with an audit trail |
 
-| Tool / technique | Use in this project |
-|---|---|
-| **SafeBlock** | Write-blocking during handling of the supplied USB evidence |
-| **FTK Imager** | Evidence acquisition, E01 imaging, and hash verification |
-| **Autopsy** | Examination of the laptop forensic dataset |
-| **iLEAPP** | Extraction and review of iPhone artefacts |
-| **MD5 / SHA-1** | Recorded checks for forensic image integrity |
-| **Chain of custody / audit trail** | Documentation of evidence handling and analysis steps |
+## Tools
 
-## Investigation workflow
+**SafeBlock** · **FTK Imager** · **Autopsy** · **iLEAPP** · **WiGLE** · **MD5 / SHA-1 verification**
 
-### 1. Simulated scene and evidence preservation
+## Investigation Workflow
 
-I helped document a staged crime scene, identify potentially relevant items, and record evidence handling. Two USB drives supplied by the university were used for the laptop and iPhone datasets.
+### 1. Evidence Handling and Documentation
 
-**Evidence image:** _To add after reviewing publication permissions and redacting personal information._
+The exercise began with a staged forensic scene and documented handling of evidence. I recorded the handling process using evidence and chain-of-custody forms.
 
-### 2. Forensic acquisition
+![Forensic workstation and evidence-handling setup](screenshots/01-evidence-handling.jpg)
 
-I followed a write-blocking workflow using SafeBlock, then used FTK Imager to create E01 forensic images of the supplied media. I recorded evidence metadata and MD5/SHA-1 hash values as part of the acquisition and verification process.
+*Figure 1. Academic forensic workstation and evidence-handling setup.*
 
-**Evidence images to add:** write-blocking setup, FTK Imager acquisition settings, and hash verification output.
+![Redacted chain-of-custody form](screenshots/02-chain-of-custody.jpg)
 
-### 3. Laptop examination — Autopsy
+*Figure 2. Chain-of-custody documentation (signatures and third-party identifiers redacted).*
 
-I examined the laptop dataset for user and file-system activity. The report documents findings including:
+### 2. Evidence Acquisition and Verification
 
-- A user profile associated with the fictional subject.
-- A concealed encrypted virtual-disk artefact (`vault.vhdx`).
-- Printer-related artefacts associated with the case scenario.
-- Communications and timestamps relevant to the simulated investigation.
+I worked with university-provided USB media containing the forensic datasets. I used SafeBlock as part of the evidence-preservation workflow and FTK Imager to document image acquisition. The image verification screens show matching MD5 values for the laptop and iPhone evidence copies.
 
-**Evidence images to add:** selected Autopsy views with brief captions explaining what each artefact establishes.
+![SafeBlock interface and connected evidence media](screenshots/03-write-blocking.png)
 
-### 4. iPhone examination — iLEAPP
+*Figure 3. SafeBlock interface identifying the connected USB device. This image does not, by itself, demonstrate the device's active write-block status.*
 
-I used iLEAPP to review mobile artefacts, including account information, messaging activity, application records, and location-related data. The report discusses how these records helped connect events in the fictional case.
+![FTK Imager laptop evidence metadata](screenshots/04-laptop-acquisition.png)
 
-**Evidence images to add:** selected, redacted iLEAPP output and supporting location or application artefacts.
+*Figure 4. Laptop image acquisition metadata entered in FTK Imager.*
 
-### 5. Correlation and reporting
+![Laptop image hash verification](screenshots/05-laptop-hash-verification.png)
 
-I compared artefacts across the laptop and iPhone datasets, considering how timestamps, communications, locations, and device activity related to the investigation questions. I documented my methods and conclusions in an expert-witness-style academic report, supported by an activity log, evidence forms, and chain-of-custody records.
+*Figure 5. Laptop E01 image verification: the displayed computed and stored MD5 hashes match.*
 
-**Important distinction:** The findings and conclusions relate to the **provided fictional case dataset**; they are not findings about real individuals.
+![iPhone evidence image hash verification](screenshots/06-iphone-hash-verification.png)
 
-## Skills demonstrated
+*Figure 6. iPhone evidence image verification: the displayed computed and stored MD5 hashes match.*
 
-- Forensic evidence handling and acquisition
-- Write-blocking and image-integrity checks
-- Windows and mobile forensic artefact examination
-- Cross-device evidence correlation
-- Chain-of-custody and audit-trail documentation
-- Technical reporting and evidence-based reasoning
+**Why it matters:** Verifying hashes provides a documented check that the image data has not changed between acquisition and verification. Hash matching alone does not establish the origin or authenticity of the underlying evidence.
 
-## Repository contents
+### 3. Windows Laptop Examination — Autopsy
 
-```text
-digital-forensics-investigation/
-├── README.md
-├── screenshots/             # Curated, authorised and redacted evidence images
-├── documentation/           # Sanitised report or case-study PDF (if cleared for release)
-└── methodology.md           # Optional detailed workflow and analysis notes
-```
+I used Autopsy to navigate the laptop's forensic image and examine artefacts relevant to the fictional investigation, including user files, recent device activity and recovered web content.
 
-> **Publication note:** The original university-supplied forensic images and extracted datasets are **not included** in this repository. Screenshots and documents will be published only where redistribution is permitted, with credentials, personal data, identifiable classmates, and other sensitive material removed. Any simulated warrant, investigator credential, or certificate must be labelled as an academic prop, not a genuine professional credential.
+![Autopsy Windows file-system examination](screenshots/07-autopsy-analysis.png)
 
-## Standards referenced in the academic report
+*Figure 7. Examining the Windows user directory and file-system artefacts in Autopsy.*
 
-The report discusses the ACPO Good Practice Guide for Digital Evidence (2012), ISO/IEC 27037:2012, NIST SP 800-86, the Police and Criminal Evidence Act 1984, and the Forensic Science Regulator's Code of Practice. These are **frameworks referenced in the coursework**, not a claim of external accreditation or independent validation.
+![Autopsy printer-related device artefacts](screenshots/08-printer-artifacts.png)
+
+*Figure 8. Recent attached-device records showing Hewlett-Packard LaserJet entries. These records suggest printer-related device activity but do not independently prove what was printed.*
+
+![Autopsy banking-related web artefact](screenshots/09-banking-artifacts.png)
+
+*Figure 9. Banking-related webpage content located among the examined Windows artefacts. Account and card details are redacted.*
+
+### 4. iPhone Examination — iLEAPP
+
+I used iLEAPP to review application artefacts in the supplied iPhone dataset. The Telegram records contained messages relevant to the simulated case, while cached Uber locations offered additional leads for timeline and location analysis.
+
+![iLEAPP Telegram artefacts](screenshots/10-telegram-analysis.png)
+
+*Figure 10. Telegram message records examined in iLEAPP; unnecessary identifiers have been redacted.*
+
+![iLEAPP Uber cached location records](screenshots/11-uber-location-artifacts.png)
+
+*Figure 11. Cached Uber application location records with timestamps. Cached locations are investigative leads, not conclusive proof of a person's physical presence.*
+
+### 5. Supplementary Location Research — WiGLE
+
+I also used WiGLE to research wireless-network location information as part of the academic investigation. WiGLE can help contextualise a network identifier, but a mapped network location does not by itself establish that a particular device or person was there.
+
+![WiGLE wireless-network location research](screenshots/12-wigle-investigation.png)
+
+*Figure 12. WiGLE research interface used to investigate wireless-network location information.*
+
+## Findings and Interpretation
+
+The investigation produced several **potentially relevant leads**, rather than a single artefact that proved the fictional allegation:
+
+- **Printer-related records:** Attached-device artefacts indicated activity associated with LaserJet devices, meriting further examination in the context of the simulated counterfeit-currency scenario.
+- **Financial web artefacts:** Banking-related content was identified during laptop examination and considered alongside other case information.
+- **Communications:** Telegram records provided context about activities discussed by fictional case participants.
+- **Location data:** Mobile application records and supplementary WiGLE research provided possible geographic leads, with important limits on what they could establish.
+
+I assessed these sources together, documented where they supported the investigative narrative and avoided treating individual artefacts as conclusive proof of wrongdoing.
+
+## Skills Demonstrated
+
+- Forensic evidence handling and documentation
+- Forensic imaging workflows and integrity verification
+- Windows artefact analysis using Autopsy
+- iOS application artefact analysis using iLEAPP
+- Timeline development and cross-source evidence correlation
+- Critical evaluation of findings and evidential limitations
+- Technical reporting and clear presentation of investigative results
+
+## Ethics, Permissions and Limitations
+
+- The case was an **academic simulation** using university-provided evidence, not a live criminal investigation.
+- Published screenshots are selected and redacted; no original forensic disk images, credentials or raw mobile datasets are included.
+- Screenshots are presented as illustrations of the workflow and must be interpreted alongside their captions.
+- Findings describe artefacts observed in the supplied datasets; they are not independent proof of real-world criminal activity.
+- This repository does not claim law-enforcement authority, professional forensic accreditation or an actual expert-witness appointment.
 
 ## Author
 
 **Ebuka Fidelis**  
-BSc (Hons) Cybersecurity, First Class Honours  
+BSc (Hons) Cybersecurity — First Class Honours  
 CompTIA A+ Certified  
-[LinkedIn](https://www.linkedin.com/in/ebukafidelis)
+[LinkedIn](https://www.linkedin.com/in/ebukafidelis) · [GitHub](https://github.com/worldbest402)
