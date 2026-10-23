@@ -100,16 +100,29 @@ I also used WiGLE to research wireless-network location information as part of t
 
 *Figure 12. WiGLE research interface used to investigate wireless-network location information.*
 
+
 ## Findings and Interpretation
 
-The investigation produced several **potentially relevant leads**, rather than a single artefact that proved the fictional allegation:
+The investigation identified several relevant artefacts across the Windows laptop and iPhone forensic datasets:
 
-- **Printer-related records:** Attached-device artefacts indicated activity associated with LaserJet devices, meriting further examination in the context of the simulated counterfeit-currency scenario.
-- **Financial web artefacts:** Banking-related content was identified during laptop examination and considered alongside other case information.
-- **Communications:** Telegram records provided context about activities discussed by fictional case participants.
-- **Location data:** Mobile application records and supplementary WiGLE research provided possible geographic leads, with important limits on what they could establish.
+- **Printer Activity:** Autopsy identified an HP LaserJet M1132MFP in Windows device records. Telegram bot logs also contained timestamps and messages referencing printing operations.
 
-I assessed these sources together, documented where they supported the investigative narrative and avoided treating individual artefacts as conclusive proof of wrongdoing.
+- **Encrypted Storage:** Examination identified a hidden virtual disk container (`vault.vhdx`), with its location investigated through information recovered from Telegram bot activity.
+
+- **Communications:** iLEAPP analysis revealed Telegram conversations discussing activities associated with the simulated counterfeit-currency operation.
+
+- **Financial Artefacts:** Banking-related records and transaction information were examined alongside communications and other case evidence.
+
+- **Location Evidence:** Uber cached locations, Safari history and Wi-Fi information were analysed alongside WiGLE research to investigate locations referenced in the case.
+
+### Cross-Device Evidence Correlation
+
+I compared artefacts from the laptop and iPhone to identify potential relationships between printing activity, communications, financial transactions and location information.
+
+For example, printer-related records were considered alongside Telegram bot timestamps and messages discussing printing operations. Location artefacts were also compared with communications to support the reconstruction of the simulated investigation timeline.
+
+**Investigation Outcome:** The combined findings supported the simulated case hypothesis of coordinated counterfeit-currency activity. However, individual artefacts were interpreted within their technical limitations and were not treated as independent proof of criminal conduct.
+
 
 ## Skills Demonstrated
 
